@@ -24,5 +24,23 @@ namespace Engine
             this.Inventory = new List<InventoryItem>();
             this.Quests = new List<PlayerQuest>();
         }
+
+        public bool HasRequiredItemToEnterLocation(Location location)
+        {
+            if (location.ItemRequiredToEnter == null)
+            {
+                return true;
+            }
+
+            foreach (InventoryItem ii in Inventory)
+            {
+                if (ii.Details.ID == location.ItemRequiredToEnter.ID)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

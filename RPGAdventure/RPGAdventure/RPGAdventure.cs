@@ -51,25 +51,12 @@ namespace RPGAdventure
 
         private void MoveTo(Location newLocation)
         {
-            if (newLocation.ItemRequiredToEnter != null)
+            if (!_player.HasRequiredItemToEnterLocation(newLocation))
             {
-                bool playerHasRequiredItem = false;
-
-                foreach (var inventoryItem in _player.Inventory)
-                {
-                    if (inventoryItem.Details.ID == newLocation.ItemRequiredToEnter.ID)
-                    {
-                        playerHasRequiredItem = true;
-                        break;
-                    }
-                }
-
-                if (!playerHasRequiredItem)
-                {
-                    rtbMessages.Text += "You must have a " + newLocation.ItemRequiredToEnter.Name + " to enter this location." + Environment.NewLine;
-                    return;
-                }
+                rtbMessages.Text += "You must have a " + newLocation.ItemRequiredToEnter.Name + " to enter this location." + Environment.NewLine;
+                return;
             }
+         
 
             // Update the player's current location
             _player.CurrentLocation = newLocation;
