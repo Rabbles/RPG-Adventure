@@ -269,7 +269,28 @@ namespace RPGAdventure
 
         private void btnUseWeapon_Click(object sender, EventArgs e)
         {
-
+            // Get the currently selected weapon from the cboWeapons ComboBox
+            // Determine the amount of damage to do to the monster
+            // Apply the damage to the monster's CurrentHitPoints
+            // Display message
+            // Check if the monster is dead
+            // Monster is dead
+            // Give player experience points for killing the monster
+            // Give player gold for killing the monster
+            // Get random loot items from the monster
+            // Add items to the lootedItems list, comparing a random number to the drop percentage
+            // If no items were randomly selected, then add the default loot item(s).
+            // Add the looted items to the player's inventory
+            // Refresh player information and inventory controls
+            // Add a blank line to the messages box, just for appearance.
+            // Move player to current location (to heal player and create a new monster to fight)
+            // Monster is still alive
+            // Determine the amount of damage the monster does to the player
+            // Display message
+            // Subtract damage from player
+            // Refresh player data in UI
+            // Display message
+            // Move player to "Home"
         }
 
         private void btnUsePotion_Click(object sender, EventArgs e)

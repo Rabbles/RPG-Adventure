@@ -126,7 +126,6 @@ namespace Engine
 
         public void MarkQuestCompleted(Quest quest)
         {
-           
             foreach (var playerQuest in Quests)
             {
                 if (playerQuest.Details.ID == quest.ID)
