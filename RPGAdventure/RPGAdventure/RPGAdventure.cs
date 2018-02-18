@@ -270,9 +270,13 @@ namespace RPGAdventure
         private void btnUseWeapon_Click(object sender, EventArgs e)
         {
             // Get the currently selected weapon from the cboWeapons ComboBox
+            var selectedWeapon = (Weapon)cboWeapons.SelectedItem;
             // Determine the amount of damage to do to the monster
+            var damageToMonster = RandomNumberGenerator.NumberBetween(selectedWeapon.MinimumDamage, selectedWeapon.MaximumDamage);
             // Apply the damage to the monster's CurrentHitPoints
+            _currentMonster.CurrentHitPoints += damageToMonster;
             // Display message
+            rtbMessages.Text += $"You hit the {_currentMonster.Name} for {damageToMonster.ToString()} points. {Environment.NewLine} ";
             // Check if the monster is dead
             // Monster is dead
             // Give player experience points for killing the monster
