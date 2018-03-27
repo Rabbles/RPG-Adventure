@@ -212,12 +212,9 @@ namespace RPGAdventure
 
             foreach (InventoryItem inventoryItem in _player.Inventory)
             {
-                if (inventoryItem.Details is Weapon)
+                if (inventoryItem.Details is Weapon && inventoryItem.Quantity > 0)
                 {
-                    if (inventoryItem.Quantity > 0)
-                    {
-                        weapons.Add((Weapon)inventoryItem.Details);
-                    }
+                    weapons.Add((Weapon)inventoryItem.Details);
                 }
             }
 
@@ -242,12 +239,9 @@ namespace RPGAdventure
 
             foreach (InventoryItem inventoryItem in _player.Inventory)
             {
-                if (inventoryItem.Details is HealingPotion)
+                if (inventoryItem.Details is HealingPotion && inventoryItem.Quantity > 0)
                 {
-                    if (inventoryItem.Quantity > 0)
-                    {
-                        healingPotions.Add((HealingPotion)inventoryItem.Details);
-                    }
+                    healingPotions.Add((HealingPotion)inventoryItem.Details);
                 }
             }
 
