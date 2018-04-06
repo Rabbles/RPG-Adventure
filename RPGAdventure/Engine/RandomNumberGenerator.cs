@@ -6,11 +6,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Engine
-{
+{   /// <summary>
+    /// Static class to generate a random number. 
+    /// </summary>
     public static class RandomNumberGenerator
     {
         private static readonly RNGCryptoServiceProvider _generator = new RNGCryptoServiceProvider();
 
+        /// <summary>
+        /// Generates a random number between a minimum and maximum value.
+        /// </summary>
+        /// <param name="minValue"></param>
+        /// <param name="maxValue"></param>
+        /// <returns></returns>
         public static int NumberBetween(int minValue, int maxValue)
         {
             byte[] randomNumber = new byte[1];
