@@ -366,7 +366,55 @@ namespace RPGAdventure
 
         private void btnUsePotion_Click(object sender, EventArgs e)
         {
+            // Get the currently selected potion from the combobox
+            HealingPotion potion = (HealingPotion)cboPotions.SelectedItem;
+            
+            // Add healing amount to the player's current hit points
+            _player.CurrentHitPoints = (_player.CurrentHitPoints + potion.AmountToHeal);
+      
+            // CurrentHitPoints cannot exceed player's MaximumHitPoints
+            if (_player.CurrentHitPoints > _player.MaximumHitPoints)
+                 {
+                 _player.CurrentHitPoints = _player.MaximumHitPoints;
+                 }
+            
+            // Remove the potion from the player's inventory
+            foreach (InventoryItem inventoryItem in _player.Inventory)
+                 {
+                 if (inventoryItem.Details.ID == potion.ID)
+                     {
+                     inventoryItem.Quantity--;
+                     break;
+                     }
+                 }
+            
+            // Display message
+            rtbMessages.Text += $"You drink a {potion.Name}" + Environment.NewLine;
+            
+            // Monster gets their turn to attack
 
+            // Determine the amount of damage the monster does to the player
+            int damageToPlayer = RandomNumberGenerator.NumberBetween(0, _currentMonster.MaximumDamage);
+            
+            // Display message
+            rtbMessages.Text += $"The { _currentMonster.Name} did {damageToPlayer.ToString()} points of damage." + Environment.NewLine;
+            
+            // Subtract damage from player
+            _player.CurrentHitPoints -= damageToPlayer;
+            
+            if (_player.CurrentHitPoints <= 0)
+                 {
+                    // Display message
+                    rtbMessages.Text += $"The {_currentMonster.Name} killed you." + Environment.NewLine;
+                
+                    // Move player to "Home"
+                    MoveTo(World.LocationByID(World.LocationIdHome));
+                 }
+            
+         // Refresh player data in UI
+         lblHitPoints.Text = _player.CurrentHitPoints.ToString();
+         UpdateInventoryListInUI();
+         UpdatePotionListInUI();
         }
     }
 }
