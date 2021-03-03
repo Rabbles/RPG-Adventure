@@ -152,9 +152,9 @@
             this.btnUseWeapon.Name = "btnUseWeapon";
             this.btnUseWeapon.Size = new System.Drawing.Size(75, 23);
             this.btnUseWeapon.TabIndex = 11;
-            this.btnUseWeapon.Text = "Use";
+            this.btnUseWeapon.Text = "Attack";
             this.btnUseWeapon.UseVisualStyleBackColor = true;
-            this.btnUseWeapon.Click += new System.EventHandler(this.btnUseWeapon_Click);
+            this.btnUseWeapon.Click += new System.EventHandler(this.UseWeapon_Click);
             // 
             // btnUsePotion
             // 
@@ -162,9 +162,9 @@
             this.btnUsePotion.Name = "btnUsePotion";
             this.btnUsePotion.Size = new System.Drawing.Size(75, 23);
             this.btnUsePotion.TabIndex = 12;
-            this.btnUsePotion.Text = "Use";
+            this.btnUsePotion.Text = "Drink";
             this.btnUsePotion.UseVisualStyleBackColor = true;
-            this.btnUsePotion.Click += new System.EventHandler(this.btnUsePotion_Click);
+            this.btnUsePotion.Click += new System.EventHandler(this.UsePotion_Click);
             // 
             // btnNorth
             // 
@@ -174,7 +174,7 @@
             this.btnNorth.TabIndex = 13;
             this.btnNorth.Text = "North";
             this.btnNorth.UseVisualStyleBackColor = true;
-            this.btnNorth.Click += new System.EventHandler(this.btnNorth_Click);
+            this.btnNorth.Click += new System.EventHandler(this.North_Click);
             // 
             // btnEast
             // 
@@ -184,12 +184,12 @@
             this.btnEast.TabIndex = 14;
             this.btnEast.Text = "East";
             this.btnEast.UseVisualStyleBackColor = true;
-            this.btnEast.Click += new System.EventHandler(this.btnEast_Click);
+            this.btnEast.Click += new System.EventHandler(this.East_Click);
             // 
-            // West
+            // btnWest
             // 
             this.btnWest.Location = new System.Drawing.Point(412, 457);
-            this.btnWest.Name = "West";
+            this.btnWest.Name = "btnWest";
             this.btnWest.Size = new System.Drawing.Size(75, 23);
             this.btnWest.TabIndex = 15;
             this.btnWest.Text = "West";
@@ -204,7 +204,7 @@
             this.btnSouth.TabIndex = 16;
             this.btnSouth.Text = "South";
             this.btnSouth.UseVisualStyleBackColor = true;
-            this.btnSouth.Click += new System.EventHandler(this.btnSouth_Click);
+            this.btnSouth.Click += new System.EventHandler(this.South_Click);
             // 
             // rtbLocation
             // 
@@ -224,7 +224,7 @@
             this.rtbMessages.TabIndex = 18;
             this.rtbMessages.Text = "";
             // 
-            // dvgInventory
+            // dgvInventory
             // 
             this.dgvInventory.AllowUserToAddRows = false;
             this.dgvInventory.AllowUserToDeleteRows = false;
@@ -234,13 +234,13 @@
             this.dgvInventory.Enabled = false;
             this.dgvInventory.Location = new System.Drawing.Point(16, 130);
             this.dgvInventory.MultiSelect = false;
-            this.dgvInventory.Name = "dvgInventory";
+            this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.ReadOnly = true;
             this.dgvInventory.RowHeadersVisible = false;
             this.dgvInventory.Size = new System.Drawing.Size(312, 309);
             this.dgvInventory.TabIndex = 19;
             // 
-            // dvgQuests
+            // dgvQuests
             // 
             this.dgvQuests.AllowUserToAddRows = false;
             this.dgvQuests.AllowUserToDeleteRows = false;
@@ -250,7 +250,7 @@
             this.dgvQuests.Enabled = false;
             this.dgvQuests.Location = new System.Drawing.Point(16, 446);
             this.dgvQuests.MultiSelect = false;
-            this.dgvQuests.Name = "dvgQuests";
+            this.dgvQuests.Name = "dgvQuests";
             this.dgvQuests.ReadOnly = true;
             this.dgvQuests.RowHeadersVisible = false;
             this.dgvQuests.Size = new System.Drawing.Size(312, 189);

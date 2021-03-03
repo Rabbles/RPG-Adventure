@@ -29,7 +29,7 @@ namespace RPGAdventure
             lblLevel.Text = _player.Level.ToString();
         }
 
-        private void btnNorth_Click(object sender, EventArgs e)
+        private void North_Click(object sender, EventArgs e)
         {
             MoveTo(_player.CurrentLocation.LocationToNorth);
         }
@@ -39,12 +39,12 @@ namespace RPGAdventure
             MoveTo(_player.CurrentLocation.LocationToWest);
         }
 
-        private void btnSouth_Click(object sender, EventArgs e)
+        private void South_Click(object sender, EventArgs e)
         {
             MoveTo(_player.CurrentLocation.LocationToSouth);
         }
 
-        private void btnEast_Click(object sender, EventArgs e)
+        private void East_Click(object sender, EventArgs e)
         {
             MoveTo(_player.CurrentLocation.LocationToEast);
         }
@@ -262,7 +262,7 @@ namespace RPGAdventure
         }
 
 
-        private void btnUseWeapon_Click(object sender, EventArgs e)
+        private void UseWeapon_Click(object sender, EventArgs e)
         {
             var selectedWeapon = (Weapon)cboWeapons.SelectedItem;
 
@@ -273,7 +273,7 @@ namespace RPGAdventure
             _currentMonster.CurrentHitPoints -= damageToMonster;
 
             // Display message
-            rtbMessages.Text += $"You hit the {_currentMonster.Name} for {damageToMonster.ToString()} points." + Environment.NewLine;
+            rtbMessages.Text += $"You hit the {_currentMonster.Name} for {damageToMonster} points." + Environment.NewLine;
 
             // Check if the monster is dead
             if (_currentMonster.CurrentHitPoints <= 0)
@@ -284,11 +284,11 @@ namespace RPGAdventure
 
                 // Give player experience points for killing the monster
                 _player.ExperiencePoints = _currentMonster.RewardExperiencePoints;
-                rtbMessages.Text = $"You receive {_currentMonster.RewardExperiencePoints.ToString()} experience points." + Environment.NewLine;
+                rtbMessages.Text = $"You receive {_currentMonster.RewardExperiencePoints} experience points." + Environment.NewLine;
 
                 // Give player gold for killing the monster
                 _player.Gold += _currentMonster.RewardGold;
-                rtbMessages.Text = $"You receive {_currentMonster.RewardGold.ToString()} gold." + Environment.NewLine;
+                rtbMessages.Text = $"You receive {_currentMonster.RewardGold} gold." + Environment.NewLine;
 
 
                 // Get random loot items from the monster
@@ -321,11 +321,11 @@ namespace RPGAdventure
 
                     if (item.Quantity == 1)
                     {
-                        rtbMessages.Text += $"You loot {item.Quantity.ToString()} {item.Details.Name}" + Environment.NewLine;
+                        rtbMessages.Text += $"You loot {item.Quantity} {item.Details.Name}" + Environment.NewLine;
                     }
                     else
                     {
-                        rtbMessages.Text += $"You loot {item.Quantity.ToString()} {item.Details.Name}" + Environment.NewLine;
+                        rtbMessages.Text += $"You loot {item.Quantity} {item.Details.Name}" + Environment.NewLine;
                     }
                 }
                 // Refresh player information and inventory controls
@@ -351,7 +351,7 @@ namespace RPGAdventure
                 // Determine the amount of damage the monster does to the player
                 int damageToPlayer = RandomNumberGenerator.NumberBetween(0, _currentMonster.MaximumDamage);
                 // Display message
-                rtbMessages.Text += $"The {_currentMonster.Name} did {damageToPlayer.ToString()} points of damage." + Environment.NewLine;
+                rtbMessages.Text += $"The {_currentMonster.Name} did {damageToPlayer} points of damage." + Environment.NewLine;
                 // Subtract damage from player
                 _player.CurrentHitPoints -= damageToPlayer;
                 // Refresh player data in UI
@@ -364,7 +364,7 @@ namespace RPGAdventure
 
         }
 
-        private void btnUsePotion_Click(object sender, EventArgs e)
+        private void UsePotion_Click(object sender, EventArgs e)
         {
             // Get the currently selected potion from the combobox
             HealingPotion potion = (HealingPotion)cboPotions.SelectedItem;
@@ -397,7 +397,7 @@ namespace RPGAdventure
             int damageToPlayer = RandomNumberGenerator.NumberBetween(0, _currentMonster.MaximumDamage);
             
             // Display message
-            rtbMessages.Text += $"The { _currentMonster.Name} did {damageToPlayer.ToString()} points of damage." + Environment.NewLine;
+            rtbMessages.Text += $"The { _currentMonster.Name} did {damageToPlayer} points of damage." + Environment.NewLine;
             
             // Subtract damage from player
             _player.CurrentHitPoints -= damageToPlayer;
