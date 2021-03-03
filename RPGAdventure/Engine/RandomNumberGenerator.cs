@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Engine
 {   /// <summary>
@@ -21,12 +17,12 @@ namespace Engine
         /// <returns></returns>
         public static int NumberBetween(int minValue, int maxValue)
         {
-            byte[] randomNumber = new byte[1];
+            var randomNumber = new byte[1];
             _generator.GetBytes(randomNumber);
-            double asciiValueOfRandomCharacter = Convert.ToDouble(randomNumber[0]);
-            double multiplier = Math.Max(0, (asciiValueOfRandomCharacter / 255d) - 0.00000000001d);
-            int range = maxValue - minValue + 1;
-            double randomValueInRange = Math.Floor(multiplier * range);
+            var asciiValueOfRandomCharacter = Convert.ToDouble(randomNumber[0]);
+            var multiplier = Math.Max(0, (asciiValueOfRandomCharacter / 255d) - 0.00000000001d);
+            var range = maxValue - minValue + 1;
+            var randomValueInRange = Math.Floor(multiplier * range);
             return (int) (minValue + randomValueInRange);
         }
     }

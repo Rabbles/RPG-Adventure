@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Engine
 {
@@ -19,12 +15,12 @@ namespace Engine
             int currentHitPoints, int maximumHitPoints) : base(currentHitPoints, maximumHitPoints)
        
         {
-            this.ID = id;
-            this.Name = name;
-            this.MaximumDamage = maximumDamage;
-            this.RewardExperiencePoints = rewardExperiencePoints;
-            this.RewardGold = rewardGold;
-            this.LootTable = new List<LootItem>();
+            ID = id;
+            Name = name;
+            MaximumDamage = maximumDamage;
+            RewardExperiencePoints = rewardExperiencePoints;
+            RewardGold = rewardGold;
+            LootTable = new List<LootItem>();
         }
     }
 }

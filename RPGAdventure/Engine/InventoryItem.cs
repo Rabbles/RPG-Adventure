@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Engine
+﻿namespace Engine
 {
     public class InventoryItem
     {
@@ -13,8 +7,8 @@ namespace Engine
 
         public InventoryItem(Item details, int quantity)
         {
-            this.Details = details;
-            this.Quantity = quantity;
+            Details = details;
+            Quantity = quantity;
         }
     }
 }

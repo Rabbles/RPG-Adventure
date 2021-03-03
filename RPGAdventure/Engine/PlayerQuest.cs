@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Engine
+﻿namespace Engine
 {
     public class PlayerQuest
     {
@@ -13,8 +7,8 @@ namespace Engine
 
         public PlayerQuest(Quest details)
         {
-            this.Details = details;
-            this.IsCompleted = false;
+            Details = details;
+            IsCompleted = false;
         }
     }
 }

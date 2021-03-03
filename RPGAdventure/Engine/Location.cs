@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Engine
+﻿namespace Engine
 {
     public class Location
     {
@@ -23,12 +16,12 @@ namespace Engine
         public Location(int id, string name, string description, Item itemRequiredToEnter = null,
                         Quest questAvailableHere = null, Monster monsterLivingHere = null)
         {
-            this.ID = id;
-            this.Name = name;
-            this.Description = description;
-            this.ItemRequiredToEnter = itemRequiredToEnter;
-            this.QuestAvailableHere = questAvailableHere;
-            this.MonsterLivingHere = monsterLivingHere;
+            ID = id;
+            Name = name;
+            Description = description;
+            ItemRequiredToEnter = itemRequiredToEnter;
+            QuestAvailableHere = questAvailableHere;
+            MonsterLivingHere = monsterLivingHere;
         }
     }
 }
