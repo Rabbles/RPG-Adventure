@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Engine
 {
@@ -175,12 +176,9 @@ namespace Engine
 
         public static Item ItemByID(int id)
         {
-            foreach (Item item in Items)
+            foreach (var item in Items.Where(item => item.ID == id))
             {
-                if (item.ID == id)
-                {
-                    return item;
-                }
+                return item;
             }
 
             return null;
@@ -188,12 +186,9 @@ namespace Engine
 
         public static Monster MonsterByID(int id)
         {
-            foreach (Monster monster in Monsters)
+            foreach (var monster in Monsters.Where(monster => monster.ID == id))
             {
-                if (monster.ID == id)
-                {
-                    return monster;
-                }
+                return monster;
             }
 
             return null;
@@ -201,12 +196,9 @@ namespace Engine
 
         public static Quest QuestByID(int id)
         {
-            foreach (Quest quest in Quests)
+            foreach (var quest in Quests.Where(quest => quest.ID == id))
             {
-                if (quest.ID == id)
-                {
-                    return quest;
-                }
+                return quest;
             }
 
             return null;
@@ -214,12 +206,9 @@ namespace Engine
 
         public static Location LocationByID(int id)
         {
-            foreach (Location location in Locations)
+            foreach (var location in Locations.Where(location => location.ID == id))
             {
-                if (location.ID == id)
-                {
-                    return location;
-                }
+                return location;
             }
 
             return null;

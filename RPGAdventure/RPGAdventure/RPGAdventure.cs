@@ -1,14 +1,9 @@
-﻿using System;
+﻿using Engine;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Engine;
 
 namespace RPGAdventure
 {
@@ -374,19 +369,19 @@ namespace RPGAdventure
       
             // CurrentHitPoints cannot exceed player's MaximumHitPoints
             if (_player.CurrentHitPoints > _player.MaximumHitPoints)
-                 {
-                 _player.CurrentHitPoints = _player.MaximumHitPoints;
-                 }
+            {
+                _player.CurrentHitPoints = _player.MaximumHitPoints;
+            }
             
             // Remove the potion from the player's inventory
             foreach (InventoryItem inventoryItem in _player.Inventory)
-                 {
-                 if (inventoryItem.Details.ID == potion.ID)
-                     {
-                     inventoryItem.Quantity--;
-                     break;
-                     }
-                 }
+            {
+                if (inventoryItem.Details.ID == potion.ID)
+                {
+                    inventoryItem.Quantity--;
+                    break;
+                }
+            }
             
             // Display message
             rtbMessages.Text += $"You drink a {potion.Name}" + Environment.NewLine;
@@ -403,18 +398,18 @@ namespace RPGAdventure
             _player.CurrentHitPoints -= damageToPlayer;
             
             if (_player.CurrentHitPoints <= 0)
-                 {
-                    // Display message
-                    rtbMessages.Text += $"The {_currentMonster.Name} killed you." + Environment.NewLine;
+            {
+                // Display message
+                rtbMessages.Text += $"The {_currentMonster.Name} killed you." + Environment.NewLine;
                 
-                    // Move player to "Home"
-                    MoveTo(World.LocationByID(World.LocationIdHome));
-                 }
+                // Move player to "Home"
+                MoveTo(World.LocationByID(World.LocationIdHome));
+            }
             
-         // Refresh player data in UI
-         lblHitPoints.Text = _player.CurrentHitPoints.ToString();
-         UpdateInventoryListInUI();
-         UpdatePotionListInUI();
+            // Refresh player data in UI
+            lblHitPoints.Text = _player.CurrentHitPoints.ToString();
+            UpdateInventoryListInUI();
+            UpdatePotionListInUI();
         }
     }
 }

@@ -6,7 +6,7 @@
 
         public static int GetNextNumber()
         {
-            _nextNumber = (_nextNumber + 1);
+            _nextNumber += 1;
             return _nextNumber;
         }
     }
